@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .nav-link {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #e9ecef;
+        }
+
+        .nav-link.active {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .paper-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .paper-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .paper-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0066cc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .paper-title:hover {
+            text-decoration: underline;
+        }
+
+        .paper-authors {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .paper-venue {
+            color: #888;
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        .paper-abstract {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .paper-detail {
+            padding: 20px 0;
+        }
+
+        .paper-detail h2 {
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+
+        .detail-section {
+            margin-bottom: 25px;
+        }
+
+        .detail-section h3 {
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+
+        .paper-links a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            color: #0066cc;
+            text-decoration: none;
+            border: 1px solid #0066cc;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .paper-links a:hover {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .paper-image {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+
+        .paper-video {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            margin: 15px auto;
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0066cc;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #0066cc;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .github-note {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .github-note h4 {
+            margin: 0 0 10px 0;
+            color: #0066cc;
+        }
+
+        .github-note p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .github-note code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            
+            .paper-video {
+                height: 250px;
+            }
+            
+            .nav-link {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="#home" class="nav-link" onclick="navigateTo('home')">Home</a>
+        <a href="#publications" class="nav-link active" onclick="navigateTo('publications')">Publications</a>
+        <a href="#about" class="nav-link" onclick="navigateTo('about')">About</a>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home" class="page">
+        <h1>Welcome to My Homepage</h1>
+        <!-- <p>Welcome to my research homepage.</p> -->
+    </div>
+
+    <!-- Publications Page -->
+    <div id="publications" class="page active">
+        <h1>Publications</h1>
+
+        <ul class="paper-list">
+            <li class="paper-item">
+                <a href="#paper/biopt-mrobot" class="paper-title" onclick="navigateTo('paper/biopt-mrobot')">Large Model and Small Model Integrated Robot for Dynamic Medical Analysis</a>
+                <div class="paper-authors">Daobin Luo, Zhanyu Hu, Yuru Liu, Yuange Liu, Weishan Zhang*</div>
+                <div class="paper-venue">The 40th Annual AAAI Conference on Artificial Intelligence (AAAI) 2026</div>
+                <div class="paper-abstract">
+                    Medical robots encounter substantial challenges in accommodating continuously changing data distributions and dynamic task scenarios. In this demo, we present BiOpt-MRobot, a large model and small model integrated robot for dynamic medical analysis capabilities. Based on a cloud-edge-device collaborative architecture, BiOpt-MRobot innovatively constructs a bidirectional optimization mechanism that achieves collaborative training between large model and small model. Furthermore, BiOpt-MRobot incorporates an intelligent model factory that implements data-aware model customization and adaptive continuous model evolution, thereby enhancing the reliability and accuracy of medical analysis outcomes. The system currently accommodates 4 data modalities encompassing 27 disease categories. In practical application, BiOpt-MRobot utilizes terminal medical robots as carriers to perform natural language interactions with users and implements multimodal intelligent medical analysis functions.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <h1>About Me</h1>
+        <!-- <p>I am a researcher focused on artificial intelligence and medical robotics.</p> -->
+    </div>
+
+    <!-- Paper Detail Pages -->
+    <div id="paper-biopt-mrobot" class="page">
+        <a href="#publications" class="back-button" onclick="navigateTo('publications')">&larr; Back to Publications</a>
+        
+        <div class="paper-detail">
+            <h2>Large Model and Small Model Integrated Robot for Dynamic Medical Analysis</h2>
+            
+            <div class="detail-section">
+                <h3>Authors</h3>
+                <p>Daobin Luo, Zhanyu Hu, Yuru Liu, Yuange Liu, Weishan Zhang*</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Publication Venue</h3>
+                <p>The 40th Annual AAAI Conference on Artificial Intelligence (AAAI) 2026</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Abstract</h3>
+                <p>Medical robots encounter substantial challenges in accommodating continuously changing data distributions and dynamic task scenarios. In this demo, we present BiOpt-MRobot, a large model and small model integrated robot for dynamic medical analysis capabilities. Based on a cloud-edge-device collaborative architecture, BiOpt-MRobot innovatively constructs a bidirectional optimization mechanism that achieves collaborative training between large model and small model. Furthermore, BiOpt-MRobot incorporates an intelligent model factory that implements data-aware model customization and adaptive continuous model evolution, thereby enhancing the reliability and accuracy of medical analysis outcomes. The system currently accommodates 4 data modalities encompassing 27 disease categories. In practical application, BiOpt-MRobot utilizes terminal medical robots as carriers to perform natural language interactions with users and implements multimodal intelligent medical analysis functions.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Paper Links</h3>
+                <div class="paper-links">
+                    <a href="https://github.com/luodaobinn/BiOpt-MRobot/raw/main/BiOpt-MRS.pdf" target="_blank">PDF Download</a>
+                    <!-- <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME" target="_blank">GitHub Repository</a> -->
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Demo Video</h3>
+                <video controls class="paper-video">
+                    <source src="https://github.com/luodaobinn/BiOpt-MRobot/raw/refs/heads/main/demo-test.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>This is a demo video of the paper "Large Model and Small Model Integrated Robot for Dynamic Medical Analysis".</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL routing management
+        const routes = {
+            'home': 'home',
+            'publications': 'publications', 
+            'about': 'about',
+            'paper/biopt-mrobot': 'paper-biopt-mrobot'
+        };
+
+        // Navigation function
+        function navigateTo(route) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Remove active status from all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Show target page
+            const targetPageId = routes[route] || 'publications';
+            const targetPage = document.getElementById(targetPageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Activate corresponding navigation link
+            if (route.startsWith('paper/')) {
+                // For paper detail pages, activate Publications navigation
+                const pubLink = document.querySelector('a[href="#publications"]');
+                if (pubLink) pubLink.classList.add('active');
+            } else {
+                const navLink = document.querySelector(`a[href="#${route}"]`);
+                if (navLink) navLink.classList.add('active');
+            }
+            
+            // Update URL
+            window.history.pushState({route: route}, '', `#${route}`);
+        }
+
+        // Handle browser forward/backward navigation
+        window.addEventListener('popstate', function(event) {
+            const route = event.state ? event.state.route : getRouteFromHash();
+            navigateToWithoutPush(route);
+        });
+
+        // Get route from URL hash
+        function getRouteFromHash() {
+            const hash = window.location.hash.slice(1);
+            return hash || 'publications';
+        }
+
+        // Navigate without pushing to history (for popstate)
+        function navigateToWithoutPush(route) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            const targetPageId = routes[route] || 'publications';
+            const targetPage = document.getElementById(targetPageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            if (route.startsWith('paper/')) {
+                const pubLink = document.querySelector('a[href="#publications"]');
+                if (pubLink) pubLink.classList.add('active');
+            } else {
+                const navLink = document.querySelector(`a[href="#${route}"]`);
+                if (navLink) navLink.classList.add('active');
+            }
+        }
+
+        // Handle initial routing on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialRoute = getRouteFromHash();
+            navigateToWithoutPush(initialRoute);
+            
+            // Set initial history state
+            window.history.replaceState({route: initialRoute}, '', `#${initialRoute}`);
+        });
+
+        // Handle link click events (prevent default jump behavior)
+        document.addEventListener('click', function(event) {
+            const target = event.target;
+            if (target.tagName === 'A' && target.getAttribute('href') && target.getAttribute('href').startsWith('#')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
